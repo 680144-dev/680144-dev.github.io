@@ -1,133 +1,223 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หญ้าพันธุ์วัวชน - บ้านป่าพะยอม พัทลุง</title>
-    <style>
-        body {
-            font-family: 'Tahoma', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9fff8;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>หญ้าพันธุ์วัวชน - บ้านป่าพะยอม</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header {
-            background-color: #2e7d32;
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-        }
+    body {
+      font-family: 'Sarabun', sans-serif;
+      line-height: 1.6;
+      background-color: #f4fdf4;
+      color: #333;
+    }
 
-        section {
-            padding: 2rem;
-        }
+    nav {
+      background-color: #2e7d32;
+      padding: 1rem 2rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        h2 {
-            color: #1b5e20;
-        }
+    nav h1 {
+      font-size: 1.5rem;
+    }
 
-        .product-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-weight: bold;
+    }
 
-        .product-card {
-            background: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 1rem;
-            width: 100%;
-            max-width: 350px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1592194996308-7b43878e84a6') no-repeat center center/cover;
+      color: white;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
 
-        .product-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 6px;
-        }
+    .hero h2 {
+      font-size: 2.5rem;
+      background: rgba(0, 100, 0, 0.6);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+    }
 
-        .contact a {
-            color: #1b5e20;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-        .contact a:hover {
-            text-decoration: underline;
-        }
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #e0e0e0;
-            color: #555;
-            margin-top: 2rem;
-        }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
 
-        @media (max-width: 600px) {
-            .product-container {
-                flex-direction: column;
-                align-items: center;
-            }
+    .product-card {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 300px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
 
-            .product-card {
-                width: 100%;
-            }
-        }
-    </style>
+    .product-card:hover {
+      transform: scale(1.02);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-card h3 {
+      background-color: #e8f5e9;
+      padding: 1rem;
+      font-size: 1.2rem;
+      color: #1b5e20;
+    }
+
+    .product-card p {
+      padding: 0 1rem 1rem;
+    }
+
+    .contact {
+      text-align: center;
+      background-color: #e8f5e9;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.5rem;
+      background-color: #2e7d32;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .contact a:hover {
+      background-color: #1b5e20;
+    }
+
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .products {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>หญ้าพันธุ์วัวชน</h1>
-        <p>โดยชุมชนบ้านป่าพะยอม จังหวัดพัทลุง</p>
-    </header>
 
-    <section class="about">
-        <h2>เกี่ยวกับเรา</h2>
-        <p>เราคือกลุ่มเกษตรกรในชุมชนบ้านป่าพะยอมที่เพาะปลูกหญ้าพันธุ์ดีสำหรับวัวชน หญ้าของเราปลูกด้วยวิธีธรรมชาติ ปลอดสารเคมี เพื่อสุขภาพที่ดีที่สุดของวัวชนของคุณ</p>
-    </section>
+  <!-- Navbar -->
+  <nav>
+    <h1>หญ้าพันธุ์วัวชน</h1>
+    <div>
+      <a href="#about">เกี่ยวกับเรา</a>
+      <a href="#products">สินค้า</a>
+      <a href="#contact">ติดต่อ</a>
+    </div>
+  </nav>
 
-    <section class="products">
-        <h2>สินค้าของเรา</h2>
-        <div class="product-container">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x250?text=หญ้าบาฮาม่า" alt="หญ้าบาฮาม่า">
-                <h3>หญ้าบาฮาม่า</h3>
-                <p>เหมาะสำหรับวัวชน ทนแล้ง โตเร็ว ใบเขียว อุดมไปด้วยโปรตีน</p>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x250?text=หญ้าเนเปียร์ปากช่อง1" alt="หญ้าเนเปียร์ปากช่อง 1">
-                <h3>หญ้าเนเปียร์ปากช่อง 1</h3>
-                <p>ให้โปรตีนสูง เหมาะสำหรับบำรุงวัวชน เพิ่มพลัง ฟื้นตัวเร็ว</p>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x250?text=หญ้ากินนีสีม่วง" alt="หญ้ากินนีสีม่วง">
-                <h3>หญ้ากินนีสีม่วง</h3>
-                <p>ใบใหญ่ นุ่ม เคี้ยวง่าย เหมาะสำหรับวัวชนทุกช่วงวัย</p>
-            </div>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <div class="hero">
+    <h2>หญ้าพันธุ์ดีสำหรับวัวชน<br>จากชุมชนบ้านป่าพะยอม</h2>
+  </div>
 
-    <section class="contact">
-        <h2>ติดต่อเรา</h2>
-        <p>โทร: 08x-xxx-xxxx</p>
-        <p>Facebook: <a href="https://facebook.com" target="_blank">facebook.com/ชุมชนหญ้าวัวชน</a></p>
-        <p>Line: <a href="#" id="line-link">คลิกที่นี่เพื่อติดต่อผ่าน Line</a></p>
-    </section>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>เกี่ยวกับเรา</h2>
+    <p>
+      กลุ่มเกษตรกรบ้านป่าพะยอม จังหวัดพัทลุง มุ่งมั่นผลิตหญ้าพันธุ์คุณภาพสูง เพื่อใช้เลี้ยงวัวชนโดยเฉพาะ
+      หญ้าของเราปลูกแบบธรรมชาติ ปลอดสารเคมี เหมาะสำหรับฟาร์มวัวชนที่ต้องการคุณภาพทั้งด้านโภชนาการและสุขภาพสัตว์
+    </p>
+  </section>
 
-    <footer>
-        <p>© 2025 ชุมชนบ้านป่าพะยอม พัทลุง</p>
-    </footer>
+  <!-- Product Section -->
+  <section id="products">
+    <h2 style="text-align:center; margin-bottom:2rem;">สินค้าของเรา</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200.png?text=หญ้าบาฮาม่า" alt="หญ้าบาฮาม่า">
+        <h3>หญ้าบาฮาม่า</h3>
+        <p>ทนแล้ง โตไว ใบเรียวเล็ก ย่อยง่าย เหมาะสำหรับวัวชนที่ต้องการความเร็ว</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200.png?text=เนเปียร์ปากช่อง" alt="หญ้าเนเปียร์">
+        <h3>หญ้าเนเปียร์ปากช่อง</h3>
+        <p>โปรตีนสูง ฟื้นตัวเร็ว เหมาะสำหรับวัวชนหลังการฝึกซ้อมหนัก</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200.png?text=หญ้ากินนีม่วง" alt="หญ้ากินนี">
+        <h3>หญ้ากินนีม่วง</h3>
+        <p>ใบใหญ่ เคี้ยวง่าย ให้พลังงานดี เหมาะกับวัวชนทุกวัย</p>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        document.getElementById('line-link').addEventListener('click', function(event) {
-            event.preventDefault();
-            window.open("https://line.me/ti/p/your-line-id", "_blank"); // เปลี่ยน your-line-id เป็นไอดีจริง
-        });
-    </script>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>ติดต่อเรา</h2>
+    <p>โทร: 08x-xxx-xxxx</p>
+    <p>Facebook: <a href="https://facebook.com" target="_blank">facebook.com/ชุมชนหญ้าวัวชน</a></p>
+    <a href="#" id="line-link">ติดต่อผ่าน Line</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ชุมชนบ้านป่าพะยอม จังหวัดพัทลุง</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById('line-link').addEventListener('click', function (event) {
+      event.preventDefault();
+      window.open("https://line.me/ti/p/your-line-id", "_blank"); // เปลี่ยนเป็น Line ID ของคุณ
+    });
+  </script>
 </body>
 </html>
